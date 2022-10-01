@@ -1,0 +1,15 @@
+Create a new sheet and add headers in A1..I1
+Columns "TEST DATE"	"AGE"	"CREATININE"	"GFR"	"Age (for Calc)"	"BIRTHDAY"	"SEX (M or F)"	"K"	"α"
+Add Birthday in F2 and Sex in G2
+Add test date in A2 and Creatinine value in C2
+All other Fields are calculated.
+Add the formulas to each column for the rows needed
+Test Date format yyyy-mm-dd
+Age Formula =DATEDIF($F$2,A3,"Y")&"+"&DATEDIF($F$2,A3,"YM")&" Mo."
+Creatininr value in mg/dl
+GFR Formula =142 * POWER(min(C2/$H$2, 1),$I$2) * POWER(max(C2/$H$2, 1),-1.2) * POWER(0.9938,E2)
+Age (for calc) formula =(DATEDIF($F$2,A2,"Y"))
+Birthday format mm/dd/yyyy
+Sex M or F 
+K formula =IF(Upper($G$2)="M",0.9,0.7)
+α formula =IF(Upper($G$2)="M",-0.302,-0.241)
